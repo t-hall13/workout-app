@@ -8,7 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <div class='container'>
+    <body>
     <header role='banner'>
       <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
         <div class='container-fluid'>
@@ -28,15 +29,36 @@
             <ul class='nav navbar-nav'>
               <li class='active'><%= link_to "Home", root_path  %></li> 
             </ul>
+            
+            <ul class='nav navbar-nav navbar-right'>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Sign in', new_user_session_path %></li>
+              
+              <% if user_signed_in? %>
+                <div class="navbar-right">
+                  <p class='navbar-text'>
+                    Signed in as <%= "#{current_user.email}" %>
+                  </p>
+                </div>
+              <% end %>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
     
   
-    <div class='container'>
-      <%= yield %>
+    <div class='row'>
+      <div class='col-md-12'>
+        <% flash.each do |key, message| %>
+          <div class="text-center alert alert-<%= key == 'notice' ? 'success': 'danger' %>"> 
+          <%= message %>
+          </div>
+        <% end %>
+      </div>
+     <%= yield %>
     </div>
     
   </body>
+  </div>
 </html>
