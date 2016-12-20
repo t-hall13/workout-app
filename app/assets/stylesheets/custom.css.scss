@@ -42,3 +42,15 @@
 .navbar-default .navbar-nav li > a:hover {
   color: #FDC56D;
 }
+
+#error_explanation {
+ background-color: #f2dede;
+ color: #a94442;
+ text-align: center;
+ padding: 5px 20px;
+ margin-bottom: 30px;
+}
+
+#error_explanation h2 {
+ font-size: 150%;
+}
