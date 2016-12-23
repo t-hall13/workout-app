@@ -9,7 +9,7 @@
  
  //navbar-styling
  .navbar {
- background: #767474;
+ background: #272822;
  padding-bottom: 20px;
 }
 
@@ -43,14 +43,24 @@
   color: #FDC56D;
 }
 
+
 #error_explanation {
  background-color: #f2dede;
  color: #a94442;
  text-align: center;
  padding: 5px 20px;
  margin-bottom: 30px;
+ list-style: none;
 }
 
 #error_explanation h2 {
  font-size: 150%;
+}
+
+.signed-in-user {
+    padding-right: 20px;
+}
+
+.signed-in-user .navbar-text {
+    color: #c7c7c7;
 }
