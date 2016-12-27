@@ -4,7 +4,7 @@
         :html => {class: "form-horizontal", role: "form"}) do |f| %>
         <% if @exercise.errors.any? %>
            <div id='error-explanation'>
-               <h2>pluralize(@exercise.errors.count, 'error')
+               <h2><%= pluralize(@exercise.errors.count, 'error') %>
                prohibited this exercise from being saved:</h2>
                
                <ul>
