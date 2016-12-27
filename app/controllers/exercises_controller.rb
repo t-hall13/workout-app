@@ -4,6 +4,10 @@ class ExercisesController < ApplicationController
    end
    
    def new
-      @excerise = current_user.exercises.new  
+      @exercise = current_user.exercises.new  
+   end
+   
+   def create
+      
    end
 end
