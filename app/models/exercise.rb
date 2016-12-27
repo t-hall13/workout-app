@@ -1,6 +1,11 @@
 class Exercise < ApplicationRecord
-  validates :duration_in_minutes, numericality: { only_integer: true }
-  validates :workout, presence: true
-  validates :workout_date, presence: true
   belongs_to :user
+  
+  alias_attribute :workout_details, :workout
+  alias_attribute :activity_date, :workout_date 
+  
+   validates :duration_in_minutes, numericality: { greater_than: 0.0 }
+   validates :workout_details, presence: true
+   validates :activity_date, presence: true
+  
 end

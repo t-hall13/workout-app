@@ -5,12 +5,15 @@ RSpec.feature "Creating Exercise" do
                          last_name: "Doe",
                          email: "john@example.com",
                          password: "password")
-       login_as(@john)
-  end
-  scenario "with valid inputs" do
+     login_as(@john)
+       
      visit '/'
+     
      click_link 'My Lounge'
      click_link 'New Workout'
+     
+  end
+  scenario "with valid inputs" do
      
      expect(page).to have_link('Back')
      
@@ -27,9 +30,7 @@ RSpec.feature "Creating Exercise" do
   end
   
   scenario "with invalid inputs" do
-     visit '/'
-     click_link 'My Lounge'
-     click_link 'New Workout'
+     
      
      expect(page).to have_link('Back')
      
@@ -40,8 +41,8 @@ RSpec.feature "Creating Exercise" do
      
      expect(page).to have_content("Exercise has not been created")
      expect(page).to have_content("Duration in minutes is not a number")
-     expect(page).to have_content("Workout can't be blank")
-     expect(page).to have_content("Workout date can't be blank")
+     expect(page).to have_content("Workout details can't be blank")
+     expect(page).to have_content("Activity date can't be blank")
     
   end
 end
