@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~>3.3.6'
 gem 'devise', '~>4.2.0 '
 gem 'jquery-ui-rails', '5.0.5'
 gem 'd3-rails','4.1.0'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
