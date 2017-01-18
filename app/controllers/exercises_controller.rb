@@ -31,7 +31,7 @@ class ExercisesController < ApplicationController
    end
    
    def update
-     @exercise = current_user.exercises.find(params[:id]) 
+     #@exercise = current_user.exercises.find(params[:id]) 
       if @exercise.update(exercise_params)
          flash[:notice]="Exercise has been updated"
          redirect_to [current_user, @exercise]
