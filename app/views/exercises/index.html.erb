@@ -40,11 +40,11 @@
  </div>
  
  <div class='col-md-5'>
-  <div id='chat-window'>
+  <div id='chat-window col-md-12 '>
    
      <header class='text-center'>Channel: <%= current_room.name %></header>
      <div class='col-md-2' id='followers'>
-       <%= @followers.each do |follower| %>
+       <% @followers.each do |follower| %>
         <%= link_to follower.user.full_name, user_exercises_path(current_user, roomId: follower.user.room.id), class: 'followers' %>
         </br>
        <% end %>
