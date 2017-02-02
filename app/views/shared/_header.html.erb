@@ -13,10 +13,10 @@
             <%= link_to "Athletes Den", root_path, class: 'navbar-brand' %>
           </div>
        
-          <div class='navbar-collapse collapse'>
+          <div class='navbar-collapse collapse' id='bs-example-navbar-collapse-1'>
             <ul class='nav navbar-nav'>
-              <li><%= link_to "Home", root_path  %></li> 
-              
+              <li class='active'><%= link_to "Home", root_path  %></li> 
+             </ul>  
               <%= form_tag(search_dashboards_path,
                             class: 'navbar-form navbar-left',
                             role: 'search') do %>
@@ -26,9 +26,8 @@
                 </div>
                 <%= submit_tag "Search", class: 'btn btn-default' %>
               <% end %>
-            </ul>
-            
-            <ul class='nav navbar-nav navbar-right'>
+           
+              <ul class='nav navbar-nav navbar-right'>
                 <% unless user_signed_in? %>
                     <li><%= link_to 'Sign up', new_user_registration_path %></li>
                     <li><%= link_to 'Sign in', new_user_session_path %></li>
@@ -36,13 +35,13 @@
                 <% else %>
                     <li><%= link_to 'My Lounge', user_exercises_path(current_user) %></li>
                     <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-                    <div class="navbar-right">
-                      <p class='navbar-text signed-in-user'>
+                    <div class="navbar-right signed-in-user">
+                      <p class='navbar-text'>
                         Signed in as <%= "#{current_user.email}" %>
                       </p>
                     </div>
                 <% end %>
-            </ul>
+              </ul>
           </div>
         </div>
      </nav>
